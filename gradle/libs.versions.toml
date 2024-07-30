@@ -7,6 +7,8 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.1"
 constraintlayout = "2.1.4"
+navigationFragment = "2.7.7"
+navigationUi = "2.7.7"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -17,6 +19,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 sdp = { group = "com.intuit.sdp", name = "sdp-android", version = "1.1.1" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
