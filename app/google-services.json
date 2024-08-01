@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "194382050644",
+    "project_id": "kotha-ko-c09d9",
+    "storage_bucket": "kotha-ko-c09d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194382050644:android:b5b0b19a8b58e04b1644c1",
+        "android_client_info": {
+          "package_name": "com.example.kothako"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-0SFtPukQie90wkRTnfvF8fT-zdoTxkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
