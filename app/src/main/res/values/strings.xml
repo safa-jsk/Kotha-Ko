@@ -42,4 +42,21 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="login">Login</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="pass">Password :</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="email_">Email :</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="username">Username :</string>
+    <string name="confirm_password">Confirm Password :</string>
+    <string name="signup">Sign Up</string>
+    <string name="user">Username</string>
+    <string name="add_pfp">Add Profile Picture</string>
+    <string name="logo">Logo</string>
+    <string name="from">From</string>
+    <string name="developer">TRIAD</string>
 </resources>
