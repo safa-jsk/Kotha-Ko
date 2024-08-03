@@ -121,7 +121,7 @@
         app:layout_constraintVertical_bias="0.789" />
 
     <EditText
-        android:id="@+id/enter_username"
+        android:id="@+id/edit_user"
         android:layout_width="191dp"
         android:layout_height="73dp"
         android:autofillHints=""
@@ -136,7 +136,7 @@
         app:layout_constraintVertical_bias="0.477" />
 
     <EditText
-        android:id="@+id/enter_email"
+        android:id="@+id/edit_email"
         android:layout_width="193dp"
         android:layout_height="49dp"
         android:autofillHints=""
@@ -151,7 +151,7 @@
         app:layout_constraintVertical_bias="0.577" />
 
     <EditText
-        android:id="@+id/enter_pass"
+        android:id="@+id/edit_pass"
         android:layout_width="195dp"
         android:layout_height="61dp"
         android:autofillHints=""
@@ -166,7 +166,7 @@
         app:layout_constraintVertical_bias="0.663" />
 
     <EditText
-        android:id="@+id/enter_confirm_pass"
+        android:id="@+id/edit_confirm_pass"
         android:layout_width="193dp"
         android:layout_height="58dp"
         android:autofillHints=""

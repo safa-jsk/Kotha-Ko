@@ -88,22 +88,22 @@
         app:layout_constraintVertical_bias="0.811" />
 
     <EditText
-        android:id="@+id/enter_username"
+        android:id="@+id/edit_email"
         android:layout_width="218dp"
         android:layout_height="64dp"
         android:autofillHints=""
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="@string/email"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintVertical_bias="0.678" />
 
     <EditText
-        android:id="@+id/enter_pass"
+        android:id="@+id/edit_pass"
         android:layout_width="217dp"
         android:layout_height="70dp"
         android:autofillHints=""
