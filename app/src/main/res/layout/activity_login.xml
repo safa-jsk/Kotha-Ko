@@ -23,8 +23,8 @@
 
     <TextView
         android:id="@+id/text_login"
-        android:layout_width="191dp"
-        android:layout_height="108dp"
+        android:layout_width="392dp"
+        android:layout_height="104dp"
         android:fontFamily="@font/spartan_bold"
         android:gravity="center"
         android:text="@string/login"
@@ -35,33 +35,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintVertical_bias="0.398" />
 
     <TextView
         android:id="@+id/text_sign_in"
-        android:layout_width="269dp"
-        android:layout_height="76dp"
+        android:layout_width="256dp"
+        android:layout_height="54dp"
         android:fontFamily="@font/spartan_bold"
         android:gravity="center"
         android:text="@string/sign_in_to_continue"
         android:textColor="@color/white"
-        android:textSize="@dimen/_20sdp"
+        android:textSize="@dimen/_15sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.522" />
 
     <TextView
         android:id="@+id/text_email"
-        android:layout_width="140dp"
-        android:layout_height="62dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="50dp"
         android:fontFamily="@font/spartan_bold"
         android:gravity="center_vertical"
         android:text="@string/email_"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_20sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,8 +78,8 @@
         android:fontFamily="@font/spartan_bold"
         android:gravity="center_vertical"
         android:text="@string/pass"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_20sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,10 +98,10 @@
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintHorizontal_bias="0.797"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintVertical_bias="0.662" />
 
     <EditText
         android:id="@+id/edit_pass"
@@ -108,22 +109,22 @@
         android:layout_height="70dp"
         android:autofillHints=""
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/password"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintHorizontal_bias="0.798"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
+        app:layout_constraintVertical_bias="0.803" />
 
     <Button
         android:id="@+id/button_login"
-        android:layout_width="@dimen/_89sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:text="@string/login"
+        android:layout_width="121dp"
+        android:layout_height="55dp"
         android:backgroundTint="#007fac"
         android:gravity="center"
+        android:text="@string/login"
         android:textSize="@dimen/_14sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,13 +134,13 @@
 
     <TextView
         android:id="@+id/text_already_acc"
-        android:layout_width="175dp"
-        android:layout_height="27dp"
+        android:layout_width="165dp"
+        android:layout_height="26dp"
         android:fontFamily="@font/spartan_bold"
         android:gravity="center"
         android:text="@string/create_an_account"
         android:textColor="#007fac"
-        android:textSize="@dimen/_13sdp"
+        android:textSize="@dimen/_10sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
