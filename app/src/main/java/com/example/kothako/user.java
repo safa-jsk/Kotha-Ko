@@ -1,7 +1,7 @@
 package com.example.kothako;
 
 public class user {
-    String pfp, gmail, username, pass, userid, lastnessage, status;
+    String pfp, gmail, username, pass, userid, last_message, status;
 
 
     public user(String id, String name, String mail, String pass, String image_URI, String status){
@@ -54,12 +54,10 @@ public class user {
         this.userid = userid;
     }
 
-    public String getLastnessage() {
-        return lastnessage;
-    }
+    public String getLast_message() {return last_message; }
 
-    public void setLastnessage(String lastnessage) {
-        this.lastnessage = lastnessage;
+    public void setLast_message(String last_message) {
+        this.last_message = last_message;
     }
 
     public String getStatus() {

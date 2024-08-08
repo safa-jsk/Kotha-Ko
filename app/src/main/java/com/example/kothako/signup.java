@@ -63,13 +63,13 @@ public class signup extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
         auth = FirebaseAuth.getInstance();
-        text_login = findViewById(R.id.text_login);
-        edit_user = findViewById(R.id.edit_user);
-        edit_email = findViewById(R.id.edit_email);
-        edit_pass = findViewById(R.id.edit_pass);
-        edit_confirm_pass = findViewById(R.id.edit_confirm_pass);
-        image_pfp = findViewById(R.id.image_pfp);
-        button_sign_up = findViewById(R.id.button_sign_up);
+        text_login = findViewById(R.id.text_Login);
+        edit_user = findViewById(R.id.edit_User);
+        edit_email = findViewById(R.id.edit_Email);
+        edit_pass = findViewById(R.id.edit_Pass);
+        edit_confirm_pass = findViewById(R.id.edit_Confirm_Pass);
+        image_pfp = findViewById(R.id.image_Pfp);
+        button_sign_up = findViewById(R.id.button_Sign_Up);
 
 
         text_login.setOnClickListener(new View.OnClickListener() {
