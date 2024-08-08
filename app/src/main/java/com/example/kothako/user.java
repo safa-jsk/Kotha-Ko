@@ -3,7 +3,6 @@ package com.example.kothako;
 public class user {
     String pfp, gmail, username, pass, userid, last_message, status;
 
-
     public user(String id, String name, String mail, String pass, String image_URI, String status){
         this.userid = id;
         this.username = name;
@@ -14,9 +13,7 @@ public class user {
     }
 
 
-    public String getPfp() {
-        return pfp;
-    }
+    public String getPfp() { return pfp; }
 
     public void setPfp(String pfp) {
         this.pfp = pfp;
