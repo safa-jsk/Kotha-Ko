@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,7 @@ public class signup extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     FirebaseDatabase database;
     FirebaseStorage storage;
+    ProgressBar progressBar;
 
 
     @SuppressLint("WrongViewCast")
@@ -55,11 +57,15 @@ public class signup extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_signup);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layout_signup), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.INVISIBLE); // Initially set invisible, visible if login successful.
+
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -123,6 +129,7 @@ public class signup extends AppCompatActivity {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()){
+                                                                    progressBar.setVisibility(View.VISIBLE);
                                                                     Intent intent = new Intent(signup.this, MainActivity.class);
                                                                     startActivity(intent);
                                                                     finish();
@@ -145,6 +152,7 @@ public class signup extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
+                                                progressBar.setVisibility(View.VISIBLE);
                                                 Intent intent = new Intent(signup.this, MainActivity.class);
                                                 startActivity(intent);
                                                 finish();
