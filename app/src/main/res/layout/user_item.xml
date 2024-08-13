@@ -5,6 +5,7 @@
     android:layout_margin="13.00dp"
     android:background="@drawable/border_main">
 
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_Pfp"
         android:layout_width="56dp"
@@ -42,6 +43,7 @@
             android:textSize="15sp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="5dp"/>
+
     </LinearLayout>
 
 </RelativeLayout>

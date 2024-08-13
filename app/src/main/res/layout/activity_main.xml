@@ -11,11 +11,11 @@
 
     <LinearLayout
         android:id="@+id/toolBar"
-        android:layout_width="wrap_content"
-        android:layout_height="65dp"
+        android:layout_width="354dp"
+        android:layout_height="76dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginEnd="25dp"
         android:background="@color/white"
@@ -28,9 +28,9 @@
             android:layout_gravity="center"
             android:layout_marginStart="80dp"
             android:layout_marginEnd="80dp"
-            android:gravity="center"
             android:layout_weight="1"
             android:fontFamily="@font/spartan_bold"
+            android:gravity="center"
             android:text="@string/app_name"
             android:textColor="#0000ac"
             android:textSize="@dimen/_20sdp"
@@ -89,10 +89,29 @@
         android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+
         android:layout_marginEnd="75dp"
         android:layout_marginBottom="55dp"
         android:contentDescription="@string/settings"
         android:src="@drawable/setting1" />
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="170dp"
+        android:layout_height="168dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="391dp"
+        android:contentDescription="@string/logo"
+        android:alpha="0.3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        app:srcCompat="@drawable/final_kotha_ko" />
 
 
 </RelativeLayout>
