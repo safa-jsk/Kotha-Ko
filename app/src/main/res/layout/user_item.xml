@@ -3,52 +3,45 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="13.00dp"
-    android:background="@drawable/bordermain">
+    android:background="@drawable/border_main">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_Pfp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="@string/add_pfp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/add_your_photo" />
 
-    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/image_Pfp"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:contentDescription="@string/add_pfp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25"
-            android:src="@drawable/add_your_photo"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#0000ff"/>
-        <LinearLayout
+        <TextView
+            android:id="@+id/text_User"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/spartan_bold"
-                android:text="Name"
-                android:textColor="@color/black"
-                android:textSize="23.40dp"
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:fontFamily="@font/spartan_bold"
-                android:textSize="10.40dp"
-                android:text="Status"/>
-
-
-
-        </LinearLayout>
-
+            android:fontFamily="@font/spartan_bold"
+            android:text="@string/name"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/user_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spartan_bold"
+            android:text="@string/status"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
 
 </RelativeLayout>

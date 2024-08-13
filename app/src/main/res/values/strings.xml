@@ -59,4 +59,10 @@
     <string name="logo">Logo</string>
     <string name="from">From</string>
     <string name="developer">TRIAD</string>
+    <string name="logout_button">logout button</string>
+    <string name="camera">camera</string>
+    <string name="chat">chat</string>
+    <string name="settings">settings</string>
+    <string name="name">Name</string>
+    <string name="status">Status</string>
 </resources>

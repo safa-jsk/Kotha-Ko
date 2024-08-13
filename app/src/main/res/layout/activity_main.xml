@@ -5,93 +5,93 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbacknew"
+    android:background="@drawable/main_back_new"
 
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/toolBar"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/_63sdp"
+        android:layout_height="65dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="226dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="@dimen/_12sdp"
-        android:layout_marginEnd="185dp"
+        android:layout_marginEnd="25dp"
         android:background="@color/white"
-        android:gravity="center">
+        android:gravity="start">
 
-        <TextureView
-            android:layout_width="match_parent"
-            android:layout_height="508dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
+        <TextView
+            android:id="@+id/text_app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="-60dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:gravity="center"
             android:layout_weight="1"
             android:fontFamily="@font/spartan_bold"
             android:text="@string/app_name"
-            android:textColor="@color/white"
+            android:textColor="#0000ac"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold" />
 
-
         <ImageView
-            android:layout_width="58dp"
-            android:layout_height="54dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
+            android:id="@+id/logout_button"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
             android:layout_gravity="center"
-            android:layout_marginStart="330dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="23dp"
-            android:layout_marginBottom="811dp"
-            android:background="@drawable/logout" />
-
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/logout"
+            android:contentDescription="@string/logout_button" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="396dp"
-        android:layout_height="576dp"
+        android:id="@+id/main_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolBar"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="191dp"
-        android:layout_below="@id/toolBar" />
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginBottom="175dp" />
 
     <ImageView
+        android:id="@+id/camera"
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="273dp"
-        android:layout_marginBottom="61dp"
+        android:layout_marginEnd="275dp"
+        android:layout_marginBottom="60dp"
+        android:contentDescription="@string/camera"
         android:src="@drawable/cam" />
 
     <ImageView
+        android:id="@+id/chat"
         android:layout_width="68dp"
         android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="49dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/chat"
         android:src="@drawable/chat1" />
 
     <ImageView
+        android:id="@+id/settings"
         android:layout_width="68dp"
         android:layout_height="66dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="55dp"
+        android:contentDescription="@string/settings"
         android:src="@drawable/setting1" />
 
 
