@@ -29,10 +29,12 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+
     }
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -50,4 +52,5 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.sdp)
     implementation(libs.circleimageview)
+    implementation(libs.picasso)
 }

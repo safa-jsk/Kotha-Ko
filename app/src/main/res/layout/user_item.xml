@@ -24,7 +24,7 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/text_User"
+            android:id="@+id/user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/spartan_bold"

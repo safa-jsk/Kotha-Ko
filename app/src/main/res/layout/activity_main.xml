@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_back_new"
+    android:background="@drawable/main_back_new2"
 
     tools:context=".MainActivity">
 
@@ -48,7 +48,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_body"
+        android:id="@+id/main_userRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolBar"
@@ -63,48 +63,48 @@
 
     <ImageView
         android:id="@+id/camera"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
+        android:layout_width="36dp"
+        android:layout_height="35dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="275dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="262dp"
+        android:layout_marginBottom="59dp"
         android:contentDescription="@string/camera"
         android:src="@drawable/cam" />
 
     <ImageView
         android:id="@+id/chat"
-        android:layout_width="68dp"
-        android:layout_height="66dp"
+        android:layout_width="39dp"
+        android:layout_height="43dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="175dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="187dp"
+        android:layout_marginBottom="54dp"
         android:contentDescription="@string/chat"
         android:src="@drawable/chat1" />
 
     <ImageView
         android:id="@+id/settings"
-        android:layout_width="68dp"
-        android:layout_height="66dp"
+        android:layout_width="42dp"
+        android:layout_height="44dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
 
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="56dp"
         android:contentDescription="@string/settings"
         android:src="@drawable/setting1" />
 
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="170dp"
-        android:layout_height="168dp"
+        android:layout_width="168dp"
+        android:layout_height="156dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="119dp"
-        android:layout_marginBottom="391dp"
-        android:contentDescription="@string/logo"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="402dp"
         android:alpha="0.3"
+        android:contentDescription="@string/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
