@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     user_adapter adapter;
     FirebaseDatabase database;
     ArrayList<users> userArrayList;
+    ImageView img_logout, img_camera, img_chat, img_settings;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -51,9 +54,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         database = FirebaseDatabase.getInstance("https://kotha-ko-c09d9-default-rtdb.firebaseio.com/");
-
         DatabaseReference reference = database.getReference().child("user");
-
         userArrayList = new ArrayList<>();
 
         main_userRecyclerView = findViewById(R.id.layout_main_userRecyclerView);
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                userArrayList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     users user = dataSnapshot.getValue(users.class);
                     userArrayList.add(user);
@@ -75,6 +77,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("FirebaseError", "Error: " + error.getMessage());
+            }
+        });
+
+        /*
+          Buttons to Navigate the App
+          Logout, Camera, Chat, Settings
+         */
+
+        img_logout = findViewById(R.id.logout_button);
+        img_camera = findViewById(R.id.camera);
+        img_chat = findViewById(R.id.chat);
+        img_settings = findViewById(R.id.settings);
+
+        img_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 

@@ -3,6 +3,10 @@ package com.example.kothako;
 public class users {
     String pfp, gmail, username, pass, userid, last_message, status;
 
+    public users() {
+        // Default constructor required for calls to DataSnapshot.getValue(users.class)
+    }
+
     public users(String id, String name, String mail, String pass, String image_URI, String status){
         this.userid = id;
         this.username = name;
