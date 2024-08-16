@@ -3,6 +3,7 @@ package com.example.kothako;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -25,12 +26,11 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
     RecyclerView main_userRecyclerView;
-    User_Adapter adapter;
+    user_adapter adapter;
     FirebaseDatabase database;
-    ArrayList<user> userArrayList;
+    ArrayList<users> userArrayList;
 
-
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,20 +38,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        getSupportActionBar().hide();
 
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-        database = FirebaseDatabase.getInstance();
-        auth=FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() == null) {
+            Intent intent=new Intent(MainActivity.this, login.class);
+            startActivity(intent);
+        }
 
+        database = FirebaseDatabase.getInstance("https://kotha-ko-c09d9-default-rtdb.firebaseio.com/");
 
-        DatabaseReference reference = database.getReference().child("Player");
+        DatabaseReference reference = database.getReference().child("user");
 
         userArrayList = new ArrayList<>();
 
-        reference.addValueEventListener(new ValueEventListener() {
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
+        main_userRecyclerView = findViewById(R.id.layout_main_userRecyclerView);
+        main_userRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new user_adapter(MainActivity.this, userArrayList);
+        main_userRecyclerView.setAdapter(adapter);
 
-                    user user = dataSnapshot.getValue(user.class);
+        reference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    users user = dataSnapshot.getValue(users.class);
                     userArrayList.add(user);
                 }
                 adapter.notifyDataSetChanged();
@@ -59,25 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Log.e("FirebaseError", "Error: " + error.getMessage());
             }
         });
 
-        main_userRecyclerView = findViewById(R.id.main_userRecyclerView);
-        main_userRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new User_Adapter(MainActivity.this, userArrayList);
-        main_userRecyclerView.setAdapter(adapter);
-
-
-        if (auth.getCurrentUser() == null) {
-            Intent intent=new Intent(MainActivity.this, login.class);
-            startActivity(intent);
-        }
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 }

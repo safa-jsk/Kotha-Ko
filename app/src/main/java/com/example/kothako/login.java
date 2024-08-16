@@ -45,7 +45,7 @@ public class login extends AppCompatActivity {
             return insets;
         });
 
-        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        progressBar = findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.INVISIBLE); // Initially set invisible, visible if login successful.
 
         auth = FirebaseAuth.getInstance();

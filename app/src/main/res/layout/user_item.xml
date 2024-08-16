@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="13.00dp"
-    android:background="@drawable/border_main">
+    android:background="@drawable/border_main"
+    android:id="@+id/user_item">
 
 
     <de.hdodenhof.circleimageview.CircleImageView

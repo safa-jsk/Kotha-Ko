@@ -1,9 +1,9 @@
 package com.example.kothako;
 
-public class user {
+public class users {
     String pfp, gmail, username, pass, userid, last_message, status;
 
-    public user(String id, String name, String mail, String pass, String image_URI, String status){
+    public users(String id, String name, String mail, String pass, String image_URI, String status){
         this.userid = id;
         this.username = name;
         this.gmail = mail;

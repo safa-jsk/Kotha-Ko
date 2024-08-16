@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +23,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -63,7 +61,7 @@ public class signup extends AppCompatActivity {
             return insets;
         });
 
-        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        progressBar = findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.INVISIBLE); // Initially set invisible, visible if login successful.
 
         database = FirebaseDatabase.getInstance();
@@ -124,7 +122,7 @@ public class signup extends AppCompatActivity {
                                                     @Override
                                                     public void onSuccess(Uri uri) {
                                                         image_URI = uri.toString();
-                                                        user user = new user(id, name, mail, pass, image_URI, status);
+                                                        users user = new users(id, name, mail, pass, image_URI, status);
                                                         reference.setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
@@ -147,7 +145,7 @@ public class signup extends AppCompatActivity {
                                 }else {
                                     String status = "Using this App";
                                     image_URI = "https://firebasestorage.googleapis.com/v0/b/kotha-ko-c09d9.appspot.com/o/user.png?alt=media&token=e499441c-626d-4551-b1a7-c51a976a2bb8";
-                                    user user = new user(id, name, mail, pass, image_URI, status);
+                                    users user = new users(id, name, mail, pass, image_URI, status);
                                     reference.setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
