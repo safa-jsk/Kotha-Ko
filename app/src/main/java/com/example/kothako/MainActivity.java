@@ -1,10 +1,12 @@
 package com.example.kothako;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -93,7 +95,29 @@ public class MainActivity extends AppCompatActivity {
         img_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Dialog dialog = new Dialog(MainActivity.this, R.style.dialogue);
+                dialog.setContentView(R.layout.dialogue_layout);
+                Button no, yes;
+                no = dialog.findViewById(R.id.button_no);
+                yes = dialog.findViewById(R.id.button_yes);
 
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(MainActivity.this, login.class);
+                        startActivity(intent);
+                    }
+                });
+
+                dialog.show();
             }
         });
 
