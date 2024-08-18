@@ -31,4 +31,5 @@
     <string name="confirm_logout">Confirm Logout?</string>
     <string name="no">NO</string>
     <string name="yes">YES</string>
+    <string name="typeamessages">Type The Messages. . . </string>
 </resources>

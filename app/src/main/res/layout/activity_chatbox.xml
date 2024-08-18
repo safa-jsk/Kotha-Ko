@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chatback1"
+    tools:context=".chatbox">
+
+
+    <LinearLayout
+        android:id="@+id/lol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_Pfp_chat"
+            android:layout_width="123dp"
+            android:layout_height="132dp"
+            android:contentDescription="@string/add_pfp"
+            android:src="@drawable/add_your_photo"
+            app:civ_border_color="#0000ff"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <TextView
+            android:id="@+id/recivername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13.00dp"
+            android:fontFamily="@font/spartan_bold"
+            android:gravity="center"
+            android:text="shayla"
+            android:textColor="@color/white"
+            android:textSize="19.00sp" />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="502dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="180dp"
+        android:layout_marginBottom="9dp"
+        android:layout_below="@id/lol"
+        android:padding="13.00dp"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58.50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2.60dp"
+        android:layout_marginTop="2.60dp"
+        android:layout_marginBottom="2.60dp"
+        android:layout_marginEnd="2.60dp">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="45.50dp"
+            android:background="#000000"
+            app:cardCornerRadius="32.50dp"
+            android:layout_marginStart="6.50dp"
+            android:layout_marginEnd="9.10dp"
+            android:layout_weight="1">
+            
+            
+            <EditText
+                android:layout_width="338dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:fontFamily="@font/spartan_bold"
+                android:hint="@string/typeamessages"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100.50dp"
+            android:layout_height="45.50dp"
+            android:background="#000000"
+            app:cardCornerRadius="32.50dp"
+            android:layout_marginStart="6.50dp"
+            android:layout_marginEnd="6.50dp"
+            android:layout_weight="1">
+            
+            
+            <ImageView
+                android:layout_width="19.50dp"
+                android:layout_height="19.50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/send"/>
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</RelativeLayout>

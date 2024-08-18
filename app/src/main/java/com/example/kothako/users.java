@@ -31,7 +31,7 @@ public class users {
         this.gmail = gmail;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
     }
 
