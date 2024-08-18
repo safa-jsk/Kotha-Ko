@@ -31,5 +31,7 @@
     <string name="confirm_logout">Confirm Logout?</string>
     <string name="no">NO</string>
     <string name="yes">YES</string>
-    <string name="typeamessages">Type The Messages. . . </string>
+    <string name="type_message">Type The Messages. . . </string>
+    <string name="send_button">send_button</string>
+    <string name="receiver">Receiver Username</string>
 </resources>

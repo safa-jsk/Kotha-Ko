@@ -14,45 +14,33 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class chatbox extends AppCompatActivity {
-    String reciverimg,reciverUID,reciverName,senderUID;
+public class chat_box extends AppCompatActivity {
+    String receiver_img, receiver_UID, receiver_Name, sender_UID;
     CircleImageView profile;
-    TextView reciverNName;
+    TextView receiverNName;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
-
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_chatbox);
 
-        reciverName=getIntent().getStringExtra("nameeeee");
-        reciverimg=getIntent().getStringExtra("reciverImg");
-        reciverUID=getIntent().getStringExtra("uID");
+        receiver_Name =getIntent().getStringExtra("name");
+        receiver_img =getIntent().getStringExtra("receiverImg");
+        receiver_UID =getIntent().getStringExtra("uID");
 
 
         profile = findViewById(R.id.image_Pfp_chat);
-        reciverNName =findViewById(R.id.recivername);
+        receiverNName =findViewById(R.id.receiver_name);
 
         Picasso.get()
-                .load(reciverimg)
+                .load(receiver_img)
                 .placeholder(R.drawable.man)
                 .error(R.drawable.man)
-                .into(profile );
+                .into(profile);
 
-        reciverNName.setText(""+reciverName);
-
-
-
-
-
-
-
+        receiverNName.setText(receiver_Name);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

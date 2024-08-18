@@ -27,13 +27,9 @@ public class users {
         return gmail;
     }
 
-    public void setGmail(String gmail) {
-        this.gmail = gmail;
-    }
+    public void setGmail(String gmail) { this.gmail = gmail; }
 
-    public static String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
     public void setUsername(String username) {
         this.username = username;

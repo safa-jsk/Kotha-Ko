@@ -5,12 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/chatback1"
-    tools:context=".chatbox">
-
+    android:background="@drawable/chat_back1"
+    tools:context=".chat_box">
 
     <LinearLayout
-        android:id="@+id/lol"
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -32,32 +31,31 @@
             app:layout_constraintVertical_bias="0.25" />
 
         <TextView
-            android:id="@+id/recivername"
+            android:id="@+id/receiver_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="13.00dp"
             android:fontFamily="@font/spartan_bold"
             android:gravity="center"
-            android:text="shayla"
-            android:textColor="@color/white"
-            android:textSize="19.00sp" />
-
+            android:text="@string/receiver"
+            android:textColor="#ffffff"
+            android:textSize="20.00sp" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="502dp"
+        android:layout_height="500dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="180dp"
-        android:layout_marginBottom="9dp"
-        android:layout_below="@id/lol"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/linear_layout"
         android:padding="13.00dp"/>
     
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="58.50dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="2.60dp"
@@ -65,47 +63,46 @@
         android:layout_marginBottom="2.60dp"
         android:layout_marginEnd="2.60dp">
 
-
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_chat"
             android:layout_width="match_parent"
-            android:layout_height="45.50dp"
+            android:layout_height="50dp"
             android:background="#000000"
             app:cardCornerRadius="32.50dp"
             android:layout_marginStart="6.50dp"
-            android:layout_marginEnd="9.10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1">
             
-            
             <EditText
-                android:layout_width="338dp"
-                android:layout_height="45dp"
+                android:id="@+id/edit_chat"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:background="@null"
                 android:fontFamily="@font/spartan_bold"
-                android:hint="@string/typeamessages"/>
-
+                android:hint="@string/type_message"
+                android:importantForAutofill="no"
+                android:inputType="" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_send"
             android:layout_width="100.50dp"
             android:layout_height="45.50dp"
-            android:background="#000000"
+            android:background="#ffffff"
             app:cardCornerRadius="32.50dp"
             android:layout_marginStart="6.50dp"
             android:layout_marginEnd="6.50dp"
             android:layout_weight="1">
             
-            
             <ImageView
-                android:layout_width="19.50dp"
-                android:layout_height="19.50dp"
+                android:id="@+id/button_send"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_gravity="center"
-                android:background="@drawable/send"/>
-
-
-
-
+                android:background="@drawable/send"
+                android:contentDescription="@string/send_button" />
 
         </androidx.cardview.widget.CardView>
 

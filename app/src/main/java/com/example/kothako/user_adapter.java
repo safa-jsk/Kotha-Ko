@@ -42,20 +42,17 @@ public class user_adapter extends RecyclerView.Adapter<user_adapter.viewholder>{
                 .placeholder(R.drawable.man)
                 .error(R.drawable.man)
                 .into(holder.image_Pfp);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mainActivity,chatbox.class);
-                intent.putExtra("nameeeee",users.getUsername());
-                intent.putExtra("reciverImg",users.getUsername());
-                intent.putExtra("uID",users. getUserid());
+                Intent intent = new Intent(mainActivity, chat_box.class);
+                intent.putExtra("name",user.getUsername());
+                intent.putExtra("receiverImg",user.getUsername());
+                intent.putExtra("uID",user.getUserid());
                 mainActivity.startActivity(intent);
-
-
-
             }
         });
-
     }
 
     @Override
