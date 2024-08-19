@@ -19,13 +19,13 @@
 
     <TextView
         android:id="@+id/text_confirm_logout"
-        android:layout_width="match_parent"
+        android:layout_width="297dp"
         android:layout_height="wrap_content"
-        android:text="@string/confirm_logout"
-        android:textSize="30sp"
-        android:gravity="center"
         android:layout_margin="10sp"
-        android:fontFamily="@font/spartan_bold"/>
+        android:fontFamily="@font/spartan_bold"
+        android:gravity="center"
+        android:text="@string/confirm_logout"
+        android:textSize="25sp" />
 
     <LinearLayout
         style="?android:attr/buttonBarStyle"
