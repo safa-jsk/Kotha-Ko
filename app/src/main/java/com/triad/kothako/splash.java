@@ -1,4 +1,4 @@
-package com.example.kothako;
+package com.triad.kothako;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,13 +45,10 @@ public class splash extends AppCompatActivity {
         from.setAnimation(bot_anim);
         triad.setAnimation(bot_anim);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(splash.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(splash.this, MainActivity.class);
+            startActivity(intent);
+            finish();
         },4000);
 
     }

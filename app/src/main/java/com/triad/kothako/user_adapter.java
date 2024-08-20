@@ -1,4 +1,4 @@
-package com.example.kothako;
+package com.triad.kothako;
 
 import android.content.Context;
 import android.content.Intent;
@@ -43,15 +43,12 @@ public class user_adapter extends RecyclerView.Adapter<user_adapter.viewholder>{
                 .error(R.drawable.man)
                 .into(holder.image_Pfp);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mainActivity, chat_box.class);
-                intent.putExtra("name",user.getUsername());
-                intent.putExtra("receiverImg",user.getUsername());
-                intent.putExtra("uID",user.getUserid());
-                mainActivity.startActivity(intent);
-            }
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(mainActivity, chat_box.class);
+            intent.putExtra("name",user.getUsername());
+            intent.putExtra("receiverImg",user.getPfp());
+            intent.putExtra("uID",user.getUserid());
+            mainActivity.startActivity(intent);
         });
     }
 

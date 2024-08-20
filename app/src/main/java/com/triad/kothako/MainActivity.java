@@ -1,11 +1,11 @@
-package com.example.kothako;
+package com.triad.kothako;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -24,7 +24,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.internal.api.FirebaseNoSignedInUserException;
 
 import java.util.ArrayList;
 
@@ -35,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     ArrayList<users> userArrayList;
     ImageView img_logout, img_camera, img_chat, img_settings;
+    DatabaseReference reference;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         database = FirebaseDatabase.getInstance("https://kotha-ko-c09d9-default-rtdb.firebaseio.com/");
-        DatabaseReference reference = database.getReference().child("user");
+        reference = database.getReference().child("user");
         userArrayList = new ArrayList<>();
 
         main_userRecyclerView = findViewById(R.id.layout_main_userRecyclerView);
@@ -93,34 +92,38 @@ public class MainActivity extends AppCompatActivity {
         img_chat = findViewById(R.id.chat);
         img_settings = findViewById(R.id.settings);
 
-        img_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Dialog dialog = new Dialog(MainActivity.this, R.style.dialogue);
-                dialog.setContentView(R.layout.dialogue_layout);
-                Button no, yes;
-                no = dialog.findViewById(R.id.button_no);
-                yes = dialog.findViewById(R.id.button_yes);
+        img_logout.setOnClickListener(view -> {
+            Dialog dialog = new Dialog(MainActivity.this, R.style.dialogue);
+            dialog.setContentView(R.layout.dialogue_layout);
+            Button no, yes;
+            no = dialog.findViewById(R.id.button_no);
+            yes = dialog.findViewById(R.id.button_yes);
 
-                no.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
+            no.setOnClickListener(view1 -> dialog.dismiss());
 
-                yes.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(MainActivity.this, login.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                });
+            yes.setOnClickListener(view12 -> {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(MainActivity.this, login.class);
+                startActivity(intent);
+                finish();
+            });
+            dialog.show();
+        });
 
-                dialog.show();
-            }
+        img_camera.setOnClickListener(view -> {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, 50);
+        });
+
+        img_chat.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        img_settings.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, settings.class);
+            startActivity(intent);
         });
 
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -44,7 +45,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/msgadapter"
+        android:id="@+id/msg_adapter"
         android:layout_width="match_parent"
         android:layout_height="487dp"
         android:layout_below="@id/linear_layout"
@@ -67,7 +68,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_chat"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:background="#000000"
             app:cardCornerRadius="32.50dp"
             android:layout_marginStart="6.50dp"
@@ -77,12 +78,12 @@
             <EditText
                 android:id="@+id/edit_chat"
                 android:layout_width="310dp"
-                android:layout_height="35dp"
+                android:layout_height="50sp"
                 android:layout_gravity="center"
                 android:background="@null"
                 android:fontFamily="@font/spartan_bold"
-                android:textSize="17dp"
-                android:hint="Ne Kotha ko..."
+                android:textSize="17sp"
+                android:hint="@string/ne_kotha_ko"
                 android:importantForAutofill="no"
                 android:inputType="" />
 

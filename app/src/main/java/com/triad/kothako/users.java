@@ -1,4 +1,4 @@
-package com.example.kothako;
+package com.triad.kothako;
 
 public class users {
     String pfp, gmail, username, pass, userid, last_message, status;

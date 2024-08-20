@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.kothako"
+    namespace = "com.triad.kothako"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.kothako"
+        applicationId = "com.triad.kothako"
         minSdk = 29
         targetSdk = 34
         versionCode = 1

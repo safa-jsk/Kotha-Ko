@@ -1,4 +1,4 @@
-package com.example.kothako;
+package com.triad.kothako;
 
 import android.content.Context;
 

@@ -1,7 +1,7 @@
-package com.example.kothako;
+package com.triad.kothako;
 
-import static com.example.kothako.chat_box.receiverImg;
-import static com.example.kothako.chat_box.senderImg;
+import static com.triad.kothako.chat_box.receiverImg;
+import static com.triad.kothako.chat_box.senderImg;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,10 +16,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class message_adapter extends RecyclerView.Adapter {
+public class message_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
     ArrayList<message_base> messagesAdapterArrayList;
     int Item_Sent = 1;
@@ -34,12 +35,12 @@ public class message_adapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == Item_Sent){
-            View view = LayoutInflater.from(context).inflate(R.layout.sender_layout , parent, false);
+            View view = LayoutInflater.from(context).inflate(R.layout.sender_layout, parent, false);
             return new senderViewHolder(view);
         }
         else {
             View view = LayoutInflater.from(context).inflate(R.layout.receiver_layout, parent, false);
-            return  new reveiverViewHolder(view);
+            return new receiverViewHolder(view);
         }
     }
 
@@ -50,10 +51,9 @@ public class message_adapter extends RecyclerView.Adapter {
             senderViewHolder viewHolder = (senderViewHolder) holder;
             viewHolder.message_text.setText(messages.getMessage());
             Picasso.get().load(senderImg).into(viewHolder.circleImageView);
-
         }
         else {
-            reveiverViewHolder viewHolder = (reveiverViewHolder) holder;
+            receiverViewHolder viewHolder = (receiverViewHolder) holder;
             viewHolder.message_text.setText(messages.getMessage());
             Picasso.get().load(receiverImg).into(viewHolder.circleImageView);
         }
@@ -61,40 +61,35 @@ public class message_adapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return messagesAdapterArrayList.size();
     }
 
     @Override
     public int getItemViewType(int position) {
         message_base messages = messagesAdapterArrayList.get(position);
-        if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderid())){
+        if (Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().equals(messages.getSender_id())){
             return Item_Sent;
         }
-        else {
-            return Item_Receive;
-        }
+        return Item_Receive;
     }
 
-    class senderViewHolder extends RecyclerView.ViewHolder {
+    public static class senderViewHolder extends RecyclerView.ViewHolder {
         CircleImageView circleImageView;
         TextView message_text;
         public senderViewHolder(@NonNull View itemView) {
             super(itemView);
-            circleImageView = itemView.findViewById(R.id.picc);
+            circleImageView = itemView.findViewById(R.id.sender_pic);
             message_text = itemView.findViewById(R.id.sender_text);
         }
     }
 
-
-    class reveiverViewHolder extends RecyclerView.ViewHolder {
+    public static class receiverViewHolder extends RecyclerView.ViewHolder {
         CircleImageView circleImageView;
         TextView message_text;
-        public reveiverViewHolder(@NonNull View itemView) {
+        public receiverViewHolder(@NonNull View itemView) {
             super(itemView);
-            circleImageView = itemView.findViewById(R.id.pic);
-            message_text = itemView.findViewById(R.id.reciver_text);
+            circleImageView = itemView.findViewById(R.id.receiver_pic);
+            message_text = itemView.findViewById(R.id.receiver_text);
         }
     }
-
-
 }

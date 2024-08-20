@@ -66,7 +66,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="262dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginBottom="70dp"
         android:contentDescription="@string/camera"
         android:src="@drawable/cam" />
 
@@ -77,7 +77,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="187dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="65dp"
         android:contentDescription="@string/chat"
         android:src="@drawable/chat1" />
 
@@ -88,7 +88,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="113dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="67dp"
         android:contentDescription="@string/settings"
         android:src="@drawable/setting1" />
 

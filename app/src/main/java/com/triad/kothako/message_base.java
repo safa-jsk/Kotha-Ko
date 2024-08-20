@@ -1,16 +1,16 @@
-package com.example.kothako;
+package com.triad.kothako;
 
 public class message_base {
     String message;
-    String senderid;
+    String sender_id;
     long timeStamp;
 
     public message_base() {
     }
 
-    public message_base(String message, String senderid, long timeStamp) {
+    public message_base(String message, String sender_id, long timeStamp) {
         this.message = message;
-        this.senderid = senderid;
+        this.sender_id = sender_id;
         this.timeStamp = timeStamp;
     }
 
@@ -22,12 +22,12 @@ public class message_base {
         this.message = message;
     }
 
-    public String getSenderid() {
-        return senderid;
+    public String getSender_id() {
+        return sender_id;
     }
 
-    public void setSenderid(String senderid) {
-        this.senderid = senderid;
+    public void setSender_id(String sender_id) {
+        this.sender_id = sender_id;
     }
 
     public long getTimeStamp() {

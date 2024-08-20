@@ -34,4 +34,6 @@
     <string name="type_message">Type The Messages. . . </string>
     <string name="send_button">send_button</string>
     <string name="receiver">Receiver Username</string>
+    <string name="ne_kotha_ko">Ne Kotha Ko...</string>
+    <string name="save">Save</string>
 </resources>
