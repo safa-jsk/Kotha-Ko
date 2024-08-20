@@ -42,8 +42,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="80dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginStart="60sp"
+            android:layout_marginEnd="60sp"
             android:layout_weight="1"
             android:fontFamily="@font/spartan_bold"
             android:gravity="center"
@@ -80,8 +80,8 @@
         android:layout_height="35dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="262dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="230sp"
+        android:layout_marginBottom="10sp"
         android:contentDescription="@string/camera"
         android:src="@drawable/cam" />
 
@@ -91,8 +91,8 @@
         android:layout_height="43dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="187dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginEnd="165sp"
+        android:layout_marginBottom="10sp"
         android:contentDescription="@string/chat"
         android:src="@drawable/chat1" />
 
@@ -102,8 +102,8 @@
         android:layout_height="44dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="113dp"
-        android:layout_marginBottom="67dp"
+        android:layout_marginEnd="100sp"
+        android:layout_marginBottom="10sp"
         android:contentDescription="@string/settings"
         android:src="@drawable/setting1" />
 
