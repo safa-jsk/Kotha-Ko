@@ -77,15 +77,15 @@
 
             <EditText
                 android:id="@+id/edit_chat"
-                android:layout_width="310dp"
-                android:layout_height="50sp"
+                android:layout_width="296dp"
+                android:layout_height="41dp"
                 android:layout_gravity="center"
                 android:background="@null"
                 android:fontFamily="@font/spartan_bold"
-                android:textSize="17sp"
                 android:hint="@string/ne_kotha_ko"
                 android:importantForAutofill="no"
-                android:inputType="" />
+                android:inputType=""
+                android:textSize="17sp" />
 
         </androidx.cardview.widget.CardView>
 
