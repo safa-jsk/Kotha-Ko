@@ -89,8 +89,8 @@ public class chat_box extends AppCompatActivity {
                 .into(profile);
 
         // Set up Firebase references for chat
-        sender_box = sender_UID + receiver_UID;
-        receiver_box = receiver_UID + sender_UID;
+        sender_box = sender_UID + "_" + receiver_UID;
+        receiver_box = receiver_UID + "_" + sender_UID;
 
         reference = database.getReference().child("user").child(Objects.requireNonNull(firebaseAuth.getUid()));
         sender_reference = database.getReference().child("chat").child(sender_box).child("messages");

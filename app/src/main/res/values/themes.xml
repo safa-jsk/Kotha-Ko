@@ -7,7 +7,7 @@
 
     <style name="Theme.KothaKo" parent="Base.Theme.KothaKo" />
     <style name="dialogue">
-        <item name = "android:windowBackground"> @drawable/empty_backgroud </item>
+        <item name = "android:windowBackground"> @drawable/empty_background </item>
         <item name = "android:windowNoTitle"> true </item>
         <item name = "windowMinWidthMajor"> 80% </item>
         <item name = "windowActionBar"> false </item>

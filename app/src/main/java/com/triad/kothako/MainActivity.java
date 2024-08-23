@@ -5,9 +5,12 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -26,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
@@ -33,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
     user_adapter adapter;
     FirebaseDatabase database;
     ArrayList<users> userArrayList;
-    ImageView img_logout, img_camera, img_chat, img_settings;
-    DatabaseReference reference;
+    ImageView img_create_group, img_logout, img_camera, img_chat, img_settings;
+    DatabaseReference reference, user_reference, group_reference;
+    EditText group_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         database = FirebaseDatabase.getInstance("https://kotha-ko-c09d9-default-rtdb.firebaseio.com/");
-        reference = database.getReference().child("user");
+        reference = database.getReference();
+        user_reference = reference.child("user");
         userArrayList = new ArrayList<>();
 
         main_userRecyclerView = findViewById(R.id.layout_main_userRecyclerView);
@@ -64,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
         adapter = new user_adapter(MainActivity.this, userArrayList);
         main_userRecyclerView.setAdapter(adapter);
 
-        reference.addValueEventListener(new ValueEventListener() {
+        // Load others users to chat in User_Adapter
+        user_reference.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -82,15 +89,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
-          Buttons to Navigate the App
-          Logout, Camera, Chat, Settings
-         */
-
+        //Buttons to Navigate the App: Create Group, Logout, Camera, Chat, Settings
+        img_create_group = findViewById(R.id.create_group);
         img_logout = findViewById(R.id.logout_button);
         img_camera = findViewById(R.id.camera);
         img_chat = findViewById(R.id.chat);
         img_settings = findViewById(R.id.settings);
+
+        img_create_group.setOnClickListener(view -> {
+            Dialog dialog = new Dialog(MainActivity.this, R.style.dialogue);
+            dialog.setContentView(R.layout.layout_create_group);
+            group_name = dialog.findViewById(R.id.edit_group_name);
+
+            Button cancel, create;
+            cancel = dialog.findViewById(R.id.button_cancel);
+            create = dialog.findViewById(R.id.button_create);
+
+            cancel.setOnClickListener(view1 -> dialog.dismiss());
+
+            create.setOnClickListener(view2 -> {
+                if (TextUtils.isEmpty(group_name.getText().toString())){
+                    Toast.makeText(MainActivity.this,"Please write group name",Toast.LENGTH_SHORT).show();
+                } else{
+                    create_group(group_name.getText().toString());
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+        });
 
         img_logout.setOnClickListener(view -> {
             Dialog dialog = new Dialog(MainActivity.this, R.style.dialogue);
@@ -126,5 +152,20 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+    }
+
+    public void create_group(String group_name){
+        group_reference = reference.child("groups");
+        String pfp = "https://firebasestorage.googleapis.com/v0/b/kotha-ko-c09d9.appspot.com/o/group.png?alt=media&token=d2d80069-2c01-470b-a621-506ba7c9836b";
+        String group_id = group_name + "_" + Objects.requireNonNull(auth.getCurrentUser()).getUid();
+        ArrayList<String> members = new ArrayList<>();
+        members.add(auth.getCurrentUser().getUid());
+        groups group = new groups(pfp, group_name, group_id, members);
+        group_reference.child(group_id).setValue(group).addOnCompleteListener(task -> {
+            if(task.isSuccessful())
+            {
+                Toast.makeText(MainActivity.this,group_name+" group is created successfully",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

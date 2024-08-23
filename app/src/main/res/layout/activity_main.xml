@@ -42,8 +42,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="60sp"
-            android:layout_marginEnd="60sp"
+            android:layout_marginStart="50sp"
+            android:layout_marginEnd="50sp"
             android:layout_weight="1"
             android:fontFamily="@font/spartan_bold"
             android:gravity="center"
@@ -53,11 +53,20 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/logout_button"
-            android:layout_width="26dp"
-            android:layout_height="26dp"
+            android:id="@+id/create_group"
+            android:layout_width="36sp"
+            android:layout_height="36sp"
             android:layout_gravity="center"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="10sp"
+            android:background="@drawable/create_group"
+            android:contentDescription="@string/create_new_group"/>
+
+        <ImageView
+            android:id="@+id/logout_button"
+            android:layout_width="36sp"
+            android:layout_height="36sp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"
             android:background="@drawable/logout_blue"
             android:contentDescription="@string/logout_button" />
 
