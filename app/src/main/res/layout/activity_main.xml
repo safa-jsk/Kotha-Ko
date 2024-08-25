@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="vertical"
-    android:background="@drawable/main_back_new2"
+    android:background="@drawable/main_back_new"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -19,9 +19,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
-        android:background="@drawable/roundcorner"
+        android:background="@drawable/round_corner"
         android:gravity="start">
-
 
         <ImageView
             android:id="@+id/image_logo"
@@ -42,14 +41,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="50sp"
-            android:layout_marginEnd="50sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
             android:layout_weight="1"
             android:fontFamily="@font/spartan_bold"
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="#87CEEB"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -58,7 +57,7 @@
             android:layout_height="36sp"
             android:layout_gravity="center"
             android:layout_marginEnd="10sp"
-            android:background="@drawable/create_group"
+            android:src="@drawable/create_group"
             android:contentDescription="@string/create_new_group"/>
 
         <ImageView
@@ -67,54 +66,76 @@
             android:layout_height="36sp"
             android:layout_gravity="center"
             android:layout_marginEnd="10sp"
-            android:background="@drawable/logout_blue"
+            android:src="@drawable/logout_blue"
             android:contentDescription="@string/logout_button" />
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/layout_main_userRecyclerView"
+    <LinearLayout
+        android:id="@+id/recycler_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolBar"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="150dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        android:layout_height="650sp"
+        android:layout_above="@id/menu"
+        android:layout_below="@+id/toolBar"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10sp">
 
-    <ImageView
-        android:id="@+id/camera"
-        android:layout_width="36dp"
-        android:layout_height="35dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/layout_main_userRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="230sp"
-        android:layout_marginBottom="10sp"
-        android:contentDescription="@string/camera"
-        android:src="@drawable/cam" />
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="30sp"
+        android:background="@drawable/blue_background">
 
-    <ImageView
-        android:id="@+id/chat"
-        android:layout_width="39dp"
-        android:layout_height="43dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="165sp"
-        android:layout_marginBottom="10sp"
-        android:contentDescription="@string/chat"
-        android:src="@drawable/chat1" />
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="20sp"
+            android:contentDescription="@string/camera"
+            android:src="@drawable/cam" />
 
-    <ImageView
-        android:id="@+id/settings"
-        android:layout_width="42dp"
-        android:layout_height="44dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="100sp"
-        android:layout_marginBottom="10sp"
-        android:contentDescription="@string/settings"
-        android:src="@drawable/setting1" />
+        <ImageView
+            android:id="@+id/chat"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:contentDescription="@string/chat"
+            android:src="@drawable/chat1" />
+
+        <ImageView
+            android:id="@+id/settings"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="10sp"
+            android:contentDescription="@string/settings"
+            android:src="@drawable/setting1" />
+
+    </LinearLayout>
 
 <!--    <ImageView-->
 <!--        android:id="@+id/image_logo"-->
