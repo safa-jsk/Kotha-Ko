@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/chat_back1"
     android:fillViewport="true"
-    android:scrollbars="vertical"
+    android:scrollbars="none"
     tools:context=".chat_box">
 
     <RelativeLayout
@@ -53,7 +53,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/msg_adapter"
             android:layout_width="match_parent"
-            android:layout_height="487dp"
+            android:layout_height="match_parent"
             android:layout_below="@id/linear_layout"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
@@ -119,4 +119,5 @@
         </LinearLayout>
 
     </RelativeLayout>
+
 </ScrollView>
