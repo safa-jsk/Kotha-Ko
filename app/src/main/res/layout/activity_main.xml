@@ -71,26 +71,68 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/recycler_layout"
+    <ScrollView
+        android:id="@+id/scroll_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="650sp"
+        android:layout_height="wrap_content"
         android:layout_above="@id/menu"
-        android:layout_below="@+id/toolBar"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10sp">
+        android:layout_below="@id/toolBar"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/layout_main_userRecyclerView"
+        <LinearLayout
+            android:id="@+id/recycler_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            android:layout_marginBottom="10sp"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/spartan_bold"
+                android:text="@string/users"
+                android:textColor="#3E7AE0"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/layout_main_userRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/spartan_bold"
+                android:text="@string/groups"
+                android:textColor="#3E7AE0"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/group_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/menu"
@@ -137,22 +179,22 @@
 
     </LinearLayout>
 
-<!--    <ImageView-->
-<!--        android:id="@+id/image_logo"-->
-<!--        android:layout_width="168dp"-->
-<!--        android:layout_height="156dp"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginEnd="120dp"-->
-<!--        android:layout_marginBottom="400dp"-->
-<!--        android:alpha="0.3"-->
-<!--        android:contentDescription="@string/logo"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.05"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.075"-->
-<!--        app:srcCompat="@drawable/final_kotha_ko" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/image_logo"-->
+    <!--        android:layout_width="168dp"-->
+    <!--        android:layout_height="156dp"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginEnd="120dp"-->
+    <!--        android:layout_marginBottom="400dp"-->
+    <!--        android:alpha="0.3"-->
+    <!--        android:contentDescription="@string/logo"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.05"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.075"-->
+    <!--        app:srcCompat="@drawable/final_kotha_ko" />-->
 
 </RelativeLayout>

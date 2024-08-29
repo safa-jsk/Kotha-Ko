@@ -33,10 +33,12 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
-    RecyclerView main_userRecyclerView;
+    RecyclerView main_userRecyclerView, group_recycler_view;
     user_adapter adapter;
+    group_adapter grp_adapter;
     FirebaseDatabase database;
     ArrayList<users> userArrayList;
+    ArrayList<groups> group_ArrayList;
     ImageView img_create_group, img_logout, img_camera, img_chat, img_settings;
     DatabaseReference reference, user_reference, group_reference;
     EditText group_name;
@@ -46,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-//        getSupportActionBar().hide();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -62,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance("https://kotha-ko-c09d9-default-rtdb.firebaseio.com/");
         reference = database.getReference();
+
         user_reference = reference.child("user");
         userArrayList = new ArrayList<>();
-
         main_userRecyclerView = findViewById(R.id.layout_main_userRecyclerView);
         main_userRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new user_adapter(MainActivity.this, userArrayList);
@@ -81,6 +82,32 @@ public class MainActivity extends AppCompatActivity {
                     userArrayList.add(user);
                 }
                 adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("FirebaseError", "Error: " + error.getMessage());
+            }
+        });
+
+        group_reference = reference.child("groups");
+        group_ArrayList = new ArrayList<>();
+        group_recycler_view = findViewById(R.id.group_recycler_view);
+        group_recycler_view.setLayoutManager(new LinearLayoutManager(this));
+        grp_adapter = new group_adapter(MainActivity.this, group_ArrayList);
+        group_recycler_view.setAdapter(grp_adapter);
+
+        // Load Groups to chat in Grp_Adapter
+        group_reference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                group_ArrayList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    groups group = dataSnapshot.getValue(groups.class);
+                    group_ArrayList.add(group);
+                }
+                grp_adapter.notifyDataSetChanged();
             }
 
             @Override

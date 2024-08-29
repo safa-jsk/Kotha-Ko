@@ -40,4 +40,7 @@
     <string name="enter_group_name">Enter Group Name:</string>
     <string name="create">Create</string>
     <string name="cancel">Cancel</string>
+    <string name="online">Online</string>
+    <string name="users">Users</string>
+    <string name="groups">Groups</string>
 </resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chat_back1"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".group_chat_box">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/group_Pfp"
+                android:layout_width="100dp"
+                android:layout_height="86dp"
+                android:contentDescription="@string/add_pfp"
+                android:src="@drawable/add_your_photo"
+                app:civ_border_color="#0000ff"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <TextView
+                android:id="@+id/group_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="13.00dp"
+                android:fontFamily="@font/spartan_bold"
+                android:gravity="center"
+                android:text="@string/groups"
+                android:textColor="#ffffff"
+                android:textSize="20.00sp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/grp_adapter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/info_layout"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="180dp"
+            android:layout_marginBottom="64dp"
+            android:padding="13.00dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2.60dp"
+            android:layout_marginTop="2.60dp"
+            android:layout_marginBottom="2.60dp"
+            android:layout_marginEnd="2.60dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_chat"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#000000"
+                app:cardCornerRadius="32.50dp"
+                android:layout_marginStart="6.50dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/edit_chat"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:fontFamily="@font/spartan_bold"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/ne_kotha_ko"
+                    android:importantForAutofill="no"
+                    android:inputType=""
+                    android:textSize="17sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_send"
+                android:layout_width="120sp"
+                android:layout_height="60sp"
+                android:background="#ffffff"
+                app:cardCornerRadius="32.50dp"
+                android:layout_marginStart="6.50dp"
+                android:layout_marginEnd="6.50dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/button_send"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/send"
+                    android:contentDescription="@string/send_button" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
